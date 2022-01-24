@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+:root {
+  /* Colors */
+  /* Primary */
+  --grayishBlue: hsl(237, 18%, 59%);
+  --softRed: hsl(345, 95%, 68%);
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --darkDesaturatedBlue: hsl(236, 21%, 26%);
+  --veryDarkBlue: hsl(235, 16%, 14%);
+  --veryDarkBlue-mostly-black: hsl(234, 17%, 12%);
+}
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin: 0;
+  width: 80%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--veryDarkBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("./../images/bg-stars.svg"),
+    url("./../images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-size: cover, 100vw 30%;
+  background-position: bottom 30vh left 10vw, bottom 0vh left 0vw;
+}
+main {
+  margin-top: 5rem;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+[class^="container"] {
+  min-width: 75px;
+}
+.day,
+.hour,
+.minute,
+.second {
+  background-color: var(--darkDesaturatedBlue);
+  color: var(--softRed);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 7px 5px 0px var(--veryDarkBlue-mostly-black);
+  position: relative;
+  background: linear-gradient(
+    0deg,
+    rgba(60, 62, 88, 1) 50%,
+    rgba(52, 54, 80, 1) 50%
+  );
+}
+.day::after,
+.hour::after,
+.minute::after,
+.second::after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: var(--veryDarkBlue);
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.day::before,
+.hour::before,
+.minute::before,
+.second::before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: var(--veryDarkBlue);
+  border-radius: 50%;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.time {
+  margin-top: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--grayishBlue);
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.attribution {
+  color: var(--grayishBlue);
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 1024px) {
+  body {
+    justify-content: center;
+    gap: 10rem;
+  }
+  [class^="container"] {
+    width: 130px;
+    text-align: center;
+  }
+  .day,
+  .hour,
+  .minute,
+  .second {
+    font-size: 3.5rem;
+    padding: 1.5rem;
+  }
+  .social-link:hover svg path {
+    fill: var(--softRed);
+  }
+}
